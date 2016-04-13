@@ -11,25 +11,52 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
-nav, main, footer {
+input[type="text"] {
+  padding: 10px;
+  border: solid 5px #c9c9c9;
+  transition: border 0.3s;
+  outline: none
+}
+
+input[type="text"]:focus,
+input[type="text"].focus {
+  border: solid 5px #969696;
+}
+
+
+nav,footer {
   padding: 2vh;
 }
 
 nav {
-  background-color: #ff0;
+  background-color: #eee;
+  -webkit-box-shadow: 0px 0px 26px -1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 26px -1px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 26px -1px rgba(0,0,0,0.75);
   order:1;
 }
 
 main {
-  background-color: #f00;
   order:2;
+  padding-top: 8vh;
   flex-grow: 1;
 }
 
-main section {
-  background-color: #00f;
+main div {
+  -webkit-box-shadow: 0px 8px 21px -7px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 8px 21px -7px rgba(0,0,0,0.75);
+  box-shadow: 0px 8px 21px -7px rgba(0,0,0,0.75);
   margin:auto;
-  width: 50vw;
+  width: 90vw;
+}
+
+.todo-form form, .todo-list form{
+  display: flex;
+  flex-direction: row;
+}
+.todo-form input, .todo-list input {
+  flex-grow: 1;
+  font-size: 2vh;
 }
 
 .todo-list article {
@@ -37,19 +64,42 @@ main section {
   flex-direction: row;
   padding:15px;
   align-items: center;
+  font-size: 2vh;
+}
+
+.todo-list article.empty {
+  display: block;
+  padding:15px;
+  text-align: center;
+  font-size: 2vh;
+}
+
+.todo-list article.empty:hover {
+  background-color: #fff;
+}
+
+.todo-list article:hover {
+  background-color: #efefef;
 }
 
 .todo-list article span{
-  display: flex;
-  flex-direction: row;
   flex-grow: 1;
 }
 
-.todo-list article i:not(:last-child){
+.todo-list article i {
+  color: #6a6a6a;
+}
+
+.todo-list article i:hover {
+  color: #000;
+  cursor: pointer;
+}
+
+.todo-list article i:not(:last-child) {
   padding-right: 25px;
 }
 
 footer {
-  background-color: #f0f;
+  background-color: #eee;
   order: 3;
 }
