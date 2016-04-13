@@ -1,0 +1,55 @@
+/* Style Reset */
+* {
+  padding:0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  font-family: 'Raleway', sans-serif;
+}
+
+nav, main, footer {
+  padding: 2vh;
+}
+
+nav {
+  background-color: #ff0;
+  order:1;
+}
+
+main {
+  background-color: #f00;
+  order:2;
+  flex-grow: 1;
+}
+
+main section {
+  background-color: #00f;
+  margin:auto;
+  width: 50vw;
+}
+
+.todo-list article {
+  display: flex;
+  flex-direction: row;
+  padding:15px;
+  align-items: center;
+}
+
+.todo-list article span{
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+
+.todo-list article i:not(:last-child){
+  padding-right: 25px;
+}
+
+footer {
+  background-color: #f0f;
+  order: 3;
+}
