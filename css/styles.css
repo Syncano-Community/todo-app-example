@@ -1,0 +1,145 @@
+/* Style Reset */
+* {
+  padding:0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  font-family: 'Raleway', sans-serif;
+}
+
+/*** custom text input ***/
+
+input[type="text"] {
+  padding: 10px;
+  border: solid 5px #c9c9c9;
+  transition: border 0.3s;
+  outline: none
+}
+
+input[type="text"]:focus,
+input[type="text"].focus {
+  border: solid 5px #969696;
+}
+
+/*** custom checkboxes ***/
+
+input[type=checkbox] { display:none; } /* to hide the checkbox itself */
+input[type=checkbox] + label:before {
+  padding-right: 25px;
+  font-size: 3vh;
+  line-height: 3vh;
+  font-family: 'FontAwesome';
+  display: inline-block;
+  color: #6a6a6a;
+}
+
+input[type=checkbox] + label:before { content: "\f096"; } /* unchecked icon */
+input[type=checkbox] + label:hover:before {   cursor: pointer; color: #000000;
+ } /* unchecked icon */
+
+input[type=checkbox]:checked + label:before {
+  content: "\f046";
+  letter-spacing: -.4vh;
+}
+
+nav,footer {
+  padding: 2vh;
+}
+
+nav {
+  background-color: #eee;
+  -webkit-box-shadow: 0px 0px 26px -1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 26px -1px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 26px -1px rgba(0,0,0,0.75);
+  order:1;
+}
+
+main {
+  order:2;
+  padding-top: 8vh;
+  flex-grow: 1;
+}
+
+main div {
+  -webkit-box-shadow: 0px 8px 21px -7px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 8px 21px -7px rgba(0,0,0,0.75);
+  box-shadow: 0px 8px 21px -7px rgba(0,0,0,0.75);
+  margin:auto;
+  width: 90vw;
+}
+
+.todo-form form, .todo-list form{
+  display: flex;
+  flex-direction: row;
+}
+.todo-form input, .todo-list input {
+  flex-grow: 1;
+  font-size: 2vh;
+}
+
+.todo-list article {
+  display: flex;
+  flex-direction: row;
+  padding:15px;
+  align-items: center;
+  font-size: 2vh;
+  color: #6a6a6a;
+}
+
+.todo-list article input[type=checkbox] + label{
+  flex-grow: 1;
+  line-height: 3vh;
+}
+
+.todo-list article.complete input[type=checkbox] + label{
+  text-decoration: line-through;
+}
+
+.todo-list article input[type=checkbox] + label{
+  flex-grow: 1;
+}
+
+.todo-list article input[type=checkbox]:hover{
+  color: #6a6a6a;
+}
+
+.todo-list article.empty {
+  display: block;
+  padding:15px;
+  text-align: center;
+  font-size: 2vh;
+}
+
+.todo-list article.empty:hover {
+  background-color: #fff;
+}
+
+.todo-list article:hover {
+  background-color: #efefef;
+}
+
+.todo-list article button {
+  font-size: 3vh;
+  line-height: 3vh;
+  border: none;
+  background-color: transparent;
+  padding-right: 25px;
+}
+.todo-list article button:last-child {
+  padding-right: 0;
+}
+
+
+.todo-list article i:hover {
+  color: #000;
+  cursor: pointer;
+}
+
+footer {
+  background-color: #eee;
+  order: 3;
+}
