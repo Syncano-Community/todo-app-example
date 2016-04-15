@@ -1,5 +1,5 @@
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 /* Style Reset */
-
 * {
   padding:0;
   margin: 0;
@@ -11,6 +11,8 @@ body {
   flex-direction: column;
   font-family: 'Raleway', sans-serif;
 }
+
+/*** custom text input ***/
 
 input[type="text"] {
   padding: 10px;
@@ -24,6 +26,26 @@ input[type="text"].focus {
   border: solid 5px #969696;
 }
 
+/*** custom checkboxes ***/
+
+input[type=checkbox] { display:none; } /* to hide the checkbox itself */
+input[type=checkbox] + label:before {
+  padding-right: 25px;
+  font-size: 3vh;
+  line-height: 3vh;
+  font-family: 'FontAwesome';
+  display: inline-block;
+  color: #6a6a6a;
+}
+
+input[type=checkbox] + label:before { content: "\f096"; } /* unchecked icon */
+input[type=checkbox] + label:hover:before {   cursor: pointer; color: #000000;
+ } /* unchecked icon */
+
+input[type=checkbox]:checked + label:before {
+  content: "\f046";
+  letter-spacing: -.4vh;
+}
 
 nav,footer {
   padding: 2vh;
@@ -66,10 +88,24 @@ main div {
   padding:15px;
   align-items: center;
   font-size: 2vh;
+  color: #6a6a6a;
 }
 
-.todo-list article.complete span{
+.todo-list article input[type=checkbox] + label{
+  flex-grow: 1;
+  line-height: 3vh;
+}
+
+.todo-list article.complete input[type=checkbox] + label{
   text-decoration: line-through;
+}
+
+.todo-list article input[type=checkbox] + label{
+  flex-grow: 1;
+}
+
+.todo-list article input[type=checkbox]:hover{
+  color: #6a6a6a;
 }
 
 .todo-list article.empty {
@@ -87,21 +123,21 @@ main div {
   background-color: #efefef;
 }
 
-.todo-list article span{
-  flex-grow: 1;
+.todo-list article button {
+  font-size: 3vh;
+  line-height: 3vh;
+  border: none;
+  background-color: transparent;
+  padding-right: 25px;
+}
+.todo-list article button:last-child {
+  padding-right: 0;
 }
 
-.todo-list article i {
-  color: #6a6a6a;
-}
 
 .todo-list article i:hover {
   color: #000;
   cursor: pointer;
-}
-
-.todo-list article i:not(:last-child) {
-  padding-right: 25px;
 }
 
 footer {
