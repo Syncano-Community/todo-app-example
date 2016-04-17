@@ -2,6 +2,7 @@
 * {
   padding:0;
   margin: 0;
+  outline: none;
 }
 
 body {
@@ -31,7 +32,6 @@ input[type=checkbox] { display:none; } /* to hide the checkbox itself */
 input[type=checkbox] + label:before {
   padding-right: 25px;
   font-size: 3vh;
-  line-height: 3vh;
   font-family: 'FontAwesome';
   display: inline-block;
   color: #6a6a6a;
@@ -83,24 +83,20 @@ main div {
 
 .todo-list article {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: row;
   padding:15px;
-  align-items: center;
   font-size: 2vh;
   color: #6a6a6a;
 }
 
-.todo-list article input[type=checkbox] + label{
+.todo-list article span{
   flex-grow: 1;
-  line-height: 3vh;
 }
 
 .todo-list article.complete input[type=checkbox] + label{
   text-decoration: line-through;
-}
-
-.todo-list article input[type=checkbox] + label{
-  flex-grow: 1;
 }
 
 .todo-list article input[type=checkbox]:hover{
@@ -128,7 +124,9 @@ main div {
   border: none;
   background-color: transparent;
   padding-right: 25px;
+  color: #6a6a6a;
 }
+
 .todo-list article button:last-child {
   padding-right: 0;
 }
